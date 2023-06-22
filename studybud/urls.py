@@ -15,8 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+# from django.http import HttpResponse
+
+# def home(request):
+#     # request object is going to be the http object. It tells us about the 
+#     # what kind of request is sent, what kind of data is passed in, whats the user sending to the bckend
+#     return HttpResponse('Home Page')
+# def room(request):
+#     return HttpResponse('Room Page')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', home),
+    # path('room/', room),
+    path('', include('base.urls')),
 ]

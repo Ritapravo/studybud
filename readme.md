@@ -10,3 +10,43 @@ django-admin startproject studybud
 -> initializes a folder called stydybud with necessary files and filders inside
 -> cd studybud
 -> python manage.py runserver
+-> sqlite is the default database with django
+-> wsgi - web server gateway interface
+-> urls.py - all the url routings to our project
+    ->  urlpatterns = [
+            path('admin/', admin.site.urls),
+        ]
+        will be a list of all the url patterns
+        // urls trigger views
+-> settings.py - core configuration of out project
+
+*** creating a new app
+python manage.py startapp base
+-> models.py - where we configure the database
+-> views.py - 
+
+-> add line 'base.apps.BaseConfig' to the INSTALLED_APPS list in studybud/settings.py 
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+
+        'base.apps.BaseConfig',
+    ]
+
+-> in studybud/urls.py
+    added function called home() and room()
+-> cut and paste home() and room() to base/views.py
+-> create base/urls.py just to handle all the routes from the base app
+-> add "path('', include('base.urls'))," to urlpatterns in studybud/urls.py
+
+-> create a folder templates and files home.html and room.html inside it
+-> add  *BASE_DIR / 'templates'* to studybud/TEMPLATES/Dirs list
+    to make the app know about the templates directory
+-> modify base/views.py/home() by adding the render method
+    return render (request, 'home.html')
+
+
