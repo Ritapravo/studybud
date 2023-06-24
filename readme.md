@@ -67,3 +67,21 @@ we can also inherit templates inside other templates
 -> make modifications in home() in base/views.py/home()/render
 
 ### dynamic url routing - how to see a specific object on clicking specific links( link the rooms[])
+-> added "path('room/<str:pk>/', views.room, name="room")," to base/urls.py/urlpatterns
+-> added argument pk to base/views.py/room()
+-> added <a href="room/{{room.id}}"> in base/template/base/home.html
+-> change the base/views.py/room() function  and base/template/base/room.html accordingly
+
+#### database things
+-> python3 manage.py migrate
+
+-> go to base/models.py
+-> create class Room() in base/models.py
+-> add "from .models import Room" to base/admin.py
+-> add "admin.site.register(Room)" to base/admin.py
+-> similar for message model
+
+-> changes in base/views.py
+    from .models import Room
+    home() -> rooms = Room.objects.all()
+    room() -> room = Room.objects.get(id=pk)
