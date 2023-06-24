@@ -49,4 +49,21 @@ python manage.py startapp base
 -> modify base/views.py/home() by adding the render method
     return render (request, 'home.html')
 
+# template inheritance
+we can also inherit templates inside other templates
+-> created templates/navbar.html
+-> make the nacvar.html file
+-> {% include 'navbar.html' %} place this where you want to import navbar
+-> created main.html and extended it to room.html and home.html
 
+### learn about django templating engine
+
+-> added rooms [] to base/views.py
+-> create a div in home.html to render the rooms[] array
+
+-> create base/templates and then base/templates/base and base/templates/base/home.html
+-> copy templates/home.html to base/templates/base/home.html
+-> delete templates/home.html 
+-> make modifications in home() in base/views.py/home()/render
+
+### dynamic url routing - how to see a specific object on clicking specific links( link the rooms[])
