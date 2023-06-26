@@ -85,3 +85,24 @@ we can also inherit templates inside other templates
     from .models import Room
     home() -> rooms = Room.objects.all()
     room() -> room = Room.objects.get(id=pk)
+
+-> add the entries of message and topic from django admin
+
+### adding room_form
+-> create base/template/base/room_form.html
+-> create view base/views.py
+-> add to base/urls.py/urlpatterns
+-> changing the templates accordingly
+
+### making functional*** 
+-> create forms.py
+-> import forms.RoomForm in views.py
+-> make changes in room_form.html
+
+### update room
+-> create a view in base/views.py/updateRoom()
+
+
+### search 
+
+-> import Topic in base/views.py
