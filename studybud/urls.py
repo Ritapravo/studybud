@@ -30,4 +30,5 @@ urlpatterns = [
     # path('', home),
     # path('room/', room),
     path('', include('base.urls')),
+    path('api/', include('base.api.urls'))
 ]

@@ -106,3 +106,65 @@ we can also inherit templates inside other templates
 ### search 
 
 -> import Topic in base/views.py
+
+### authentication
+
+How django deals with it? 
+django by default has session based authentication...
+
+-> create template/base/login_registration.html
+
+
+### registration
+
+### creating conversations
+
+### adding participants
+-> change models.py/Room
+-> what is related name
+-> what is blank=True
+
+### using static files
+-> make a folder static at the root directory
+-> add it to settings.py
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static'
+    ]
+-> add line {% load static %} to main.html
+-> give the link to main.css in href
+
+## modifying the create_room form
+-> modify forms.py
+
+
+### Django rest framework
+-> create base/api folder
+-> create base/api/__init__.py
+-> create serializers.py
+-> create urls.py
+-> create views.py
+-> add "path('api/', include('base.api.urls'))" line to studybud/urls.py/urlpatterns
+
+### install django REST framework
+
+-> pip install djangorestframework
+-> add 'rest_framework' to settings.py/INSTALLED_APPS
+-> ### read django REST framework documentation
+
+
+### installing django-cors-headers
+-> python -m pip install django-cors-headers
+-> add 'corsheaders' to settings.py/INSTALLED_APPS
+-> add "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    to settings.py/MIDDLEWARE[]
+-> add line
+    CORS_ALLOW_ALL_ORIGINS=True
+    to settings.py
+    or you can use this allow list
+    CORS_ALLOWED_ORIGINS = [
+        "https://example.com",
+        "https://sub.example.com",
+        "http://localhost:8080",
+        "http://127.0.0.1:9000",
+    ]
