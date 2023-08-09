@@ -5,6 +5,7 @@ sudo pip install virtualenv
 virtualenv env
 sudo chmod +x env/bin/activate
 source /env/bin/activate
+pip install django
 ```
 `django-admin` shows list of all django commands
 
@@ -244,3 +245,9 @@ MIDDLEWARE = [
         "http://127.0.0.1:9000",
     ]
 ```
+
+## EXTRA
+- To generate ***requirements.txt*** use 
+`pip freeze > requirements.txt`
+- To install ***requirements.txt*** use 
+`pip install -r requirements.txt`
