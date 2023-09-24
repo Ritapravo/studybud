@@ -29,7 +29,9 @@ python manage.py runserver
 - settings.py - core configuration of out project
 ---
 ### Creating a new app
+```
 python manage.py startapp base
+```
 - models.py - where we configure the database
 - views.py - 
 
